@@ -1,60 +1,46 @@
-# Run Pool 2026 — deploy notes
+# Guess the Run — Chinook Run Pool 2026
 
-One static file (`index.html`, fonts embedded, no build step) plus a 2-minute Google
-backend for the guess log. Until the backend is connected the page runs in **preview
-mode**: guesses save only in each visitor's own browser and a banner says so.
+**Live site: https://tomgrizz.github.io/guess-the-run/**
 
-## 1. Create the guess log (Google Sheet + Apps Script)
+The Lake Ontario assessment team's pool on the fall 2026 Chinook return to two fishway
+counters: the Ganaraska (Corbett Dam) and the Credit (Streetsville). A forecast model has
+made its call for each river; teammates click a level on the charts to cast a ballot,
+fine-tune it in the boxes, and submit. Closest combined call to the official season totals
+wins a plushie from [Freshwater Conservation Canada](https://freshwaterconservationcanada.myshopify.com/).
 
-1. Create a new Google Sheet (name it anything, e.g. `run-pool-entries`).
-2. In the Sheet: **Extensions → Apps Script**. Delete the placeholder code and paste the
-   entire contents of `apps_script_backend.gs`. Save.
-3. **Deploy → New deployment → Web app**:
-   - *Execute as*: **Me**
-   - *Who has access*: **Anyone** (required so teammates can submit without logging in)
-   - Deploy, authorize with your account, and copy the **Web app URL**
-     (looks like `https://script.google.com/macros/s/AKfycb.../exec`).
+> A personal project and informal data exercise — not a peer-reviewed model and not an
+> official product of any agency.
 
-Entries land in an `entries` tab: `ts | name | gan | cre | received`. The site shows the
-latest entry per name; the sheet keeps the full history (handy for the tie-breaker —
-earliest `ts` wins).
+## How it works
 
-## 2. Connect the site
+- **Entries close 11:59 pm ET, August 31, 2026.** One ballot per person; resubmitting under
+  the same name replaces the earlier one (latest before close counts).
+- **Scoring:** `abs(your Ganaraska − actual) + abs(your Credit − actual)` against the official
+  published season total for each counter. Lowest total wins; ties go to the earlier ballot.
+- The model plays too (18,000 / 8,800). The bands on the charts are its typical past miss
+  (±21% Ganaraska, ±45% Credit) and double that.
+- Ballots are logged to a private Google Sheet via an Apps Script web app; the board and the
+  chart tick-marks show everyone's calls. The page is public and needs no login.
 
-Open `index.html`, find the `CONFIG` block near the bottom, and paste the URL:
+## Repo contents
 
-```js
-var CONFIG = {
-  SCRIPT_URL: "https://script.google.com/macros/s/AKfycb.../exec",
-  CLOSE_ISO:  "2026-09-01T03:59:00Z"   // Aug 31 2026, 11:59 pm ET — edit to move the deadline
-};
-```
+| File | What it is |
+|---|---|
+| `index.html` | The whole site — single self-contained file (fonts and figures embedded). |
+| `apps_script_backend.gs` | The guess-log backend, pasted into a Google Apps Script bound to the Sheet. |
 
-That's the only edit the file needs. (Model numbers are frozen 2026-08-19 on purpose —
-fair-pool rules — and live in the `MODEL`/`HISTORY` constants beside `CONFIG`.)
+## Maintenance notes
 
-## 3. Host it
+- **Updating the page:** edit/replace `index.html` and push (or use *Add file → Upload files*
+  on github.com); GitHub Pages rebuilds in a minute or two. Hard-refresh (Ctrl+Shift+R) to
+  bypass the browser cache.
+- **Config** lives near the bottom of `index.html`: `CONFIG.SCRIPT_URL` (the Apps Script
+  web-app URL) and `CONFIG.CLOSE_ISO` (the entry deadline, in UTC).
+- **Judging:** open the Sheet's `entries` tab, take each entrant's last row before the
+  deadline, score as above.
+- Forecast numbers are intentionally frozen at 2026-08-19 (fair-pool rule); they come from a
+  cohort-based ensemble model built on the counter, ageing, and environmental data. The full
+  analysis lives in a separate (private) report.
+- Planned: a live run-count overlay on the charts once the September run starts.
 
-Any static host works; simplest is GitHub Pages:
-
-1. Push `site/` to a repo (or copy `index.html` into a `docs/` folder of an existing one).
-2. Repo **Settings → Pages → Deploy from branch**, pick the branch/folder.
-3. Share the URL with the team. Nobody needs a login of any kind.
-
-A work web server or a shared drive won't work for the *log* unless it serves over
-http(s) — `file://` pages still run, but in preview mode per-browser.
-
-## Running the pool
-
-- **Test first**: submit a test entry, check it appears in the Sheet, delete the row.
-- **Close of entries** is automatic at `CLOSE_ISO` (form disables, tile says "locked").
-- **Judging**: when official technician-validated season totals are in, score each
-  person's latest pre-deadline entry: `abs(gan − actual_gan) + abs(cre − actual_cre)`,
-  lowest wins, ties to earliest timestamp. Thirty seconds with the Sheet sorted by `ts`.
-- **Reveal**: the board is public the whole time by design (team decision, Aug 2026).
-
-## Later (planned, not built)
-
-A live run-count tile fed from the salmonid-cv daily counter output — the footer already
-promises it. When the 2026 dailies start, wire a small JSON export into the page or ask
-Claude to extend `doGet` with a `counts` feed.
+*No lake whitefish appear anywhere in this repository. Cool fish only.*
