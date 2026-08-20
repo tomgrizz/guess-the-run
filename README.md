@@ -8,8 +8,7 @@ made its call for each river; teammates click a level on the charts to cast a ba
 fine-tune it in the boxes, and submit. Closest combined call to the official season totals
 wins a plushie from [Freshwater Conservation Canada](https://freshwaterconservationcanada.myshopify.com/).
 
-> A personal project and informal data exercise — not a peer-reviewed model and not an
-> official product of any agency.
+> A personal project and informal data exercise — not a peer-reviewed model
 
 ## How it works
 
