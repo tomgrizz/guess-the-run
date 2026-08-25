@@ -1,0 +1,57 @@
+name: Update live counts
+
+# Pulls the raw counter numbers from riverwatcherdaily.is (Ganaraska I=133, Credit I=143)
+# into data/counts.json + data/counts_daily.csv and commits them; GitHub Pages then
+# republishes the site. Times are UTC: 10:15 = 6:15 am ET (previous day complete),
+# 23:05 = 7:05 pm ET (today's fish so far). Run it by hand from the Actions tab
+# ("Run workflow"). The script stops itself after Dec 1.
+
+on:
+  schedule:
+    - cron: '15 10 * * *'
+    - cron: '5 23 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: update-counts
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install --quiet requests beautifulsoup4 lxml
+
+      - name: Fetch counts
+        run: python scripts/fetch_counts.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/counts.json data/counts_daily.csv
+          if git diff --cached --quiet; then
+            echo 'No change in counts.'
+            exit 0
+          fi
+          git commit -m "counts: $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git pull --rebase origin main
+          git push
+
+      - name: Ask Pages to rebuild (belt and braces)
+        if: success()
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" >/dev/null && echo 'Pages build requested.'
