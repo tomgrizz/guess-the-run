@@ -27,6 +27,10 @@ wins a plushie from [Freshwater Conservation Canada](https://freshwaterconservat
 |---|---|
 | `index.html` | The whole site — single self-contained file (fonts and figures embedded). |
 | `apps_script_backend.gs` | The guess-log backend, pasted into a Google Apps Script bound to the Sheet. |
+| `scripts/fetch_counts.py` | Pulls the raw counter numbers from riverwatcherdaily.is into `data/`. |
+| `.github/workflows/update-counts.yml` | Runs that script twice a day and commits the result. |
+| `data/counts.json` | What the page reads for the live counter line, readouts and tables (fall run only: the season starts Aug 1, and the table's whole-year row is swapped for a since-Aug-1 row). |
+| `data/counts_daily.csv` | Running record of raw daily up/down counts and water temperature (2023–25 falls seeded for calibration). |
 
 ## Maintenance notes
 
@@ -40,6 +44,31 @@ wins a plushie from [Freshwater Conservation Canada](https://freshwaterconservat
 - Forecast numbers are intentionally frozen at 2026-08-19 (fair-pool rule); they come from a
   cohort-based ensemble model built on the counter, ageing, and environmental data. The full
   analysis lives in a separate (private) report.
-- Planned: a live run-count overlay on the charts once the September run starts.
+
+## Live counts
+
+The black line on the charts, the "Live counter" readouts and the Up / Down / Up−Down tables come from
+the Vaki RiverWatcher pages — Ganaraska `www.riverwatcherdaily.is?I=133`, Credit `?I=143`. The counter
+id lives in an ASP.NET session cookie, and the page embeds the table at the bottom (`jsonSummary`) and
+the daily series behind the bar graph (`jsonOverView`) in hidden inputs; `scripts/fetch_counts.py`
+reads both (asking for Jan 1 → today via the Redraw postback) and writes `data/counts.json` and
+`data/counts_daily.csv`.
+
+- **Schedule:** `.github/workflows/update-counts.yml` runs at 10:15 and 23:05 UTC (≈ 6:15 am and
+  7:05 pm ET), commits when the numbers changed, and GitHub Pages republishes. Run it any time from the
+  repo's *Actions* tab → *Update live counts* → *Run workflow*. The script stops itself after Dec 1
+  (`--until`). Edit the two `cron:` lines to change the cadence.
+- **Requirements:** Actions enabled on the repo (default) — the workflow carries its own
+  `contents: write` permission, so no token setup is needed.
+- **Run locally:** `pip install requests beautifulsoup4 lxml` then `python scripts/fetch_counts.py`
+  (`--season-start 2026-08-01` is the default; the season total and the plotted line start there).
+- **What the numbers are:** the counter's raw, unclassified counts — every species, net of fish that
+  went back down, no technician review. They are context, not the official Chinook totals the pool is
+  scored on. Calibration from the same source, Aug 1–Nov 30 raw net vs. the official Chinook count:
+  Ganaraska 24,150 → 28,294 (2023), 22,639 → 19,514 (2024), 22,231 → 17,638 (2025);
+  Credit 8,457 → 7,938, 7,466 → 6,501, 11,312 → 9,748. So official ≈ 0.79–1.17× raw on the
+  Ganaraska and 0.86–0.94× on the Credit.
+- The page fails quietly if `data/counts.json` is missing or unreachable (e.g. opened from disk):
+  the charts simply show no live line.
 
 *No lake whitefish appear anywhere in this repository. Cool fish only.*
