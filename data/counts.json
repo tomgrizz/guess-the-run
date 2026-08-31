@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-30T14:52:27Z",
+  "updated": "2026-08-31T01:20:44Z",
   "as_of": "2026-08-30",
   "season_start": "2026-08-01",
   "source": "https://www.riverwatcherdaily.is",
@@ -11,16 +11,16 @@
     "window": "Measured migration in [Ganaraska River, Ontario] from Jan 01, 2026 to Aug 30, 2026",
     "last_day": "2026-08-30",
     "summary": [
-      {"label": "Today", "up": 2, "down": 0, "net": 2},
-      {"label": "Yesterday", "up": 6, "down": 0, "net": 6},
-      {"label": "Last 7 days", "up": 568, "down": 67, "net": 501},
-      {"label": "Last 30 days", "up": 755, "down": 121, "net": 634},
-      {"label": "Fall run, since Aug 1", "up": 755, "down": 121, "net": 634}
+      {"label": "Today", "up": 0, "down": 0, "net": 0},
+      {"label": "Yesterday", "up": 3, "down": 0, "net": 3},
+      {"label": "Last 7 days", "up": 518, "down": 45, "net": 473},
+      {"label": "Last 30 days", "up": 756, "down": 121, "net": 635},
+      {"label": "Fall run, since Aug 1", "up": 756, "down": 121, "net": 635}
     ],
     "season": {
-      "up": 755,
+      "up": 756,
       "down": 121,
-      "net": 634,
+      "net": 635,
       "days": 18
     },
     "daily": [
@@ -41,7 +41,7 @@
       ["2026-08-27", 43, 13],
       ["2026-08-28", 21, 3],
       ["2026-08-29", 6, 0],
-      ["2026-08-30", 2, 0]
+      ["2026-08-30", 3, 0]
     ]
   },
   "cre": {
@@ -51,16 +51,16 @@
     "window": "Measured migration in [Credit River, Ontario] from Jan 01, 2026 to Aug 30, 2026",
     "last_day": "2026-08-30",
     "summary": [
-      {"label": "Today", "up": 45, "down": 30, "net": 15},
-      {"label": "Yesterday", "up": 57, "down": 49, "net": 8},
-      {"label": "Last 7 days", "up": 222, "down": 208, "net": 14},
-      {"label": "Last 30 days", "up": 580, "down": 679, "net": -99},
-      {"label": "Fall run, since Aug 1", "up": 554, "down": 644, "net": -90}
+      {"label": "Today", "up": 0, "down": 0, "net": 0},
+      {"label": "Yesterday", "up": 45, "down": 37, "net": 8},
+      {"label": "Last 7 days", "up": 222, "down": 196, "net": 26},
+      {"label": "Last 30 days", "up": 554, "down": 651, "net": -97},
+      {"label": "Fall run, since Aug 1", "up": 554, "down": 651, "net": -97}
     ],
     "season": {
       "up": 554,
-      "down": 644,
-      "net": -90,
+      "down": 651,
+      "net": -97,
       "days": 29
     },
     "daily": [
@@ -92,7 +92,7 @@
       ["2026-08-27", 22, 21],
       ["2026-08-28", 50, 56],
       ["2026-08-29", 57, 49],
-      ["2026-08-30", 45, 30]
+      ["2026-08-30", 45, 37]
     ]
   }
 }
