@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-08T14:33:26Z",
+  "updated": "2026-09-09T01:11:55Z",
   "as_of": "2026-09-08",
   "season_start": "2026-08-01",
   "source": "https://www.riverwatcherdaily.is",
@@ -11,16 +11,16 @@
     "window": "Measured migration in [Ganaraska River, Ontario] from Jan 01, 2026 to Sep 08, 2026",
     "last_day": "2026-09-08",
     "summary": [
-      {"label": "Today", "up": 77, "down": 10, "net": 67},
-      {"label": "Yesterday", "up": 523, "down": 31, "net": 492},
-      {"label": "Last 7 days", "up": 2799, "down": 348, "net": 2451},
-      {"label": "Last 30 days", "up": 3459, "down": 440, "net": 3019},
-      {"label": "Fall run, since Aug 1", "up": 3563, "down": 469, "net": 3094}
+      {"label": "Today", "up": 0, "down": 0, "net": 0},
+      {"label": "Yesterday", "up": 382, "down": 16, "net": 366},
+      {"label": "Last 7 days", "up": 2854, "down": 331, "net": 2523},
+      {"label": "Last 30 days", "up": 3764, "down": 446, "net": 3318},
+      {"label": "Fall run, since Aug 1", "up": 3868, "down": 475, "net": 3393}
     ],
     "season": {
-      "up": 3563,
-      "down": 469,
-      "net": 3094,
+      "up": 3868,
+      "down": 475,
+      "net": 3393,
       "days": 27
     },
     "daily": [
@@ -50,7 +50,7 @@
       ["2026-09-05", 527, 69],
       ["2026-09-06", 689, 86],
       ["2026-09-07", 523, 31],
-      ["2026-09-08", 77, 10]
+      ["2026-09-08", 382, 16]
     ]
   },
   "cre": {
@@ -61,9 +61,9 @@
     "last_day": "2026-09-07",
     "summary": [
       {"label": "Today", "up": 0, "down": 0, "net": 0},
-      {"label": "Yesterday", "up": 3, "down": 0, "net": 3},
-      {"label": "Last 7 days", "up": 112, "down": 74, "net": 38},
-      {"label": "Last 30 days", "up": 598, "down": 599, "net": -1},
+      {"label": "Yesterday", "up": 0, "down": 0, "net": 0},
+      {"label": "Last 7 days", "up": 87, "down": 57, "net": 30},
+      {"label": "Last 30 days", "up": 595, "down": 597, "net": -2},
       {"label": "Fall run, since Aug 1", "up": 670, "down": 729, "net": -59}
     ],
     "season": {
