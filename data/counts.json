@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-10T14:27:42Z",
+  "updated": "2026-09-11T00:58:18Z",
   "as_of": "2026-09-10",
   "season_start": "2026-08-01",
   "source": "https://www.riverwatcherdaily.is",
@@ -11,16 +11,16 @@
     "window": "Measured migration in [Ganaraska River, Ontario] from Jan 01, 2026 to Sep 10, 2026",
     "last_day": "2026-09-10",
     "summary": [
-      {"label": "Today", "up": 3, "down": 1, "net": 2},
-      {"label": "Yesterday", "up": 238, "down": 21, "net": 217},
-      {"label": "Last 7 days", "up": 3042, "down": 348, "net": 2694},
-      {"label": "Last 30 days", "up": 4014, "down": 468, "net": 3546},
-      {"label": "Fall run, since Aug 1", "up": 4118, "down": 497, "net": 3621}
+      {"label": "Today", "up": 0, "down": 0, "net": 0},
+      {"label": "Yesterday", "up": 582, "down": 19, "net": 563},
+      {"label": "Last 7 days", "up": 3199, "down": 285, "net": 2914},
+      {"label": "Last 30 days", "up": 4591, "down": 486, "net": 4105},
+      {"label": "Fall run, since Aug 1", "up": 4697, "down": 515, "net": 4182}
     ],
     "season": {
-      "up": 4118,
-      "down": 497,
-      "net": 3621,
+      "up": 4697,
+      "down": 515,
+      "net": 4182,
       "days": 29
     },
     "daily": [
@@ -52,7 +52,7 @@
       ["2026-09-07", 523, 31],
       ["2026-09-08", 391, 16],
       ["2026-09-09", 238, 21],
-      ["2026-09-10", 3, 1]
+      ["2026-09-10", 582, 19]
     ]
   },
   "cre": {
@@ -64,7 +64,7 @@
     "summary": [
       {"label": "Today", "up": 0, "down": 0, "net": 0},
       {"label": "Yesterday", "up": 0, "down": 0, "net": 0},
-      {"label": "Last 7 days", "up": 69, "down": 35, "net": 34},
+      {"label": "Last 7 days", "up": 25, "down": 15, "net": 10},
       {"label": "Last 30 days", "up": 592, "down": 589, "net": 3},
       {"label": "Fall run, since Aug 1", "up": 670, "down": 729, "net": -59}
     ],
