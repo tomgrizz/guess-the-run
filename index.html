@@ -285,7 +285,12 @@ counters' own raw counts from riverwatcherdaily.is (every species, net of fish t
 technician review), refreshed twice a day. They are not the official Chinook totals the pool is scored
 on: in 2023–25 the official Chinook count came out at <strong>0.79–1.17×</strong> the raw Aug–Nov net on
 the Ganaraska and <strong>0.86–0.94×</strong> on the Credit. Coho and fall rainbows inflate the raw
-count, and in the record 2023 push the counter logged fewer fish than the technicians later validated.</p>
+count, and in the record 2023 push the counter logged fewer fish than the technicians later validated.
+Where the technicians have already reviewed this season's clips, the <strong>solid</strong> line is their
+fish-only count and the raw counter only continues as a <strong>dashed grey</strong> tail after the last
+reviewed day. That matters most at the Credit: in the reviewed window (to Aug 28) the raw counter logged
+980 non-fish events — beaver, minnows, debris — against 31 salmon, so its raw net there says nothing about
+the run until the next batch of clips is reviewed.</p>
 <!-- ============================ board ============================ -->
 <h2 id="board">The Board</h2>
 <p class="kicker">Every ballot, in the open · the model plays too</p>
@@ -853,6 +858,11 @@ function drawTiming(hostId){
 /* data/counts.json: raw RiverWatcher counts (riverwatcherdaily.is), written twice daily by
    scripts/fetch_counts.py via .github/workflows/update-counts.yml. Absent file = no overlay. */
 var LIVE = null, liveCache = {};
+/* data/validated.json: the technician's fish-only counts from reviewing the counter clips
+   (lake-ontario-fish-cv/scripts/_pool_validated_counts.py). Where a river has it, the line is the
+   validated count up to `through` and only continues as the raw counter, dashed, after that day.
+   Absent file = raw everywhere, as before. */
+var VALID = null;
 function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
 function fmtNet(n){ return (n < 0 ? '−' : '') + fmt(Math.abs(n)); }
 function doyOf(iso){
@@ -867,14 +877,27 @@ function dateStr(iso){
 function liveCum(key){
   if (key in liveCache) return liveCache[key];
   var r = LIVE && LIVE[key], out = null;
+  var v = VALID && VALID.rivers && VALID.rivers[key];
   if (r && r.daily && r.daily.length){
     var byDoy = {};
     r.daily.forEach(function(d){ var k = doyOf(d[0]); byDoy[k] = (byDoy[k] || 0) + d[1] - d[2]; });
     var start = doyOf(LIVE.season_start || r.daily[0][0]);
     var lastDoy = doyOf(r.last_day || r.daily[r.daily.length-1][0]);
-    var cum = [], run = 0;
-    for (var d = start; d <= lastDoy; d++){ run += byDoy[d] || 0; cum.push([d, run]); }
-    out = {cum:cum, start:start, lastDoy:lastDoy, total:run, lastNet:(byDoy[lastDoy] || 0)};
+    var splitDoy = null;
+    if (v && v.daily && v.through){
+      /* inside the reviewed window the raw days are REPLACED by the technician's fish-only days */
+      splitDoy = doyOf(v.through);
+      Object.keys(byDoy).forEach(function(k){ if (+k <= splitDoy) delete byDoy[k]; });
+      v.daily.forEach(function(d){ var k = doyOf(d[0]); byDoy[k] = (byDoy[k] || 0) + d[1] - d[2]; });
+      if (splitDoy > lastDoy) lastDoy = splitDoy;
+    }
+    var cum = [], run = 0, vTotal = 0;
+    for (var d = start; d <= lastDoy; d++){
+      run += byDoy[d] || 0; cum.push([d, run]);
+      if (splitDoy !== null && d === splitDoy) vTotal = run;
+    }
+    out = {cum:cum, start:start, lastDoy:lastDoy, total:run, lastNet:(byDoy[lastDoy] || 0),
+           splitDoy:splitDoy, vTotal:vTotal, rawSince:run - vTotal, valid:v || null};
   }
   liveCache[key] = out;
   return out;
@@ -893,28 +916,64 @@ function renderLive(){
     /* line on the ballot chart */
     while (c.live.firstChild) c.live.removeChild(c.live.firstChild);
     var pts = lc.cum.filter(function(p){ return p[0] >= c.d0 && p[0] <= c.d1; });
+    var v = lc.valid, split = lc.splitDoy;
     if (pts.length){
-      c.live.appendChild(el('polyline', {points: pts.map(function(p){ return c.x(p[0]) + ',' + c.y(clamp(p[1], 0, c.m.ymax)); }).join(' '),
-        fill:'none', stroke:'#14181a', 'stroke-width':2.2, 'stroke-linejoin':'round', 'stroke-linecap':'round'}));
+      var toXY = function(p){ return c.x(p[0]) + ',' + c.y(clamp(p[1], 0, c.m.ymax)); };
+      var solid = split === null ? pts : pts.filter(function(p){ return p[0] <= split; });
+      var dashed = split === null ? [] : pts.filter(function(p){ return p[0] >= split; });
+      if (solid.length > 1)
+        c.live.appendChild(el('polyline', {points: solid.map(toXY).join(' '),
+          fill:'none', stroke:'#14181a', 'stroke-width':2.2, 'stroke-linejoin':'round', 'stroke-linecap':'round'}));
+      if (dashed.length > 1)
+        c.live.appendChild(el('polyline', {points: dashed.map(toXY).join(' '),
+          fill:'none', stroke:'#8a8f93', 'stroke-width':1.8, 'stroke-dasharray':'4 4', 'stroke-linejoin':'round', 'stroke-linecap':'round'}));
       var e = pts[pts.length-1], ex = c.x(e[0]), ey = c.y(clamp(e[1], 0, c.m.ymax));
-      c.live.appendChild(el('circle', {cx:ex, cy:ey, r:3.5, fill:'#14181a', stroke:'#fcfcfb', 'stroke-width':1.5}));
       var right = ex < c.W - c.R - 110;
-      var t = el('text', {x: right ? ex + 8 : ex - 8, y: ey - 8, 'text-anchor': right ? 'start' : 'end',
-                          fill:'#14181a', 'font-size':11.5, 'font-family':'Archivo, sans-serif', 'font-weight':600});
-      t.textContent = 'counted ' + fmtNet(lc.total);
-      c.live.appendChild(t);
+      if (split !== null && solid.length){
+        /* the validated end: solid dot + label; the raw tail gets a grey dot + its own label */
+        var s = solid[solid.length-1], sx = c.x(s[0]), sy = c.y(clamp(s[1], 0, c.m.ymax));
+        c.live.appendChild(el('circle', {cx:sx, cy:sy, r:3.5, fill:'#14181a', stroke:'#fcfcfb', 'stroke-width':1.5}));
+        var tv = el('text', {x: sx + 8, y: sy - 8, 'text-anchor':'start',
+                             fill:'#14181a', 'font-size':11.5, 'font-family':'Archivo, sans-serif', 'font-weight':600});
+        tv.textContent = 'validated ' + fmtNet(lc.vTotal);
+        c.live.appendChild(tv);
+        if (dashed.length > 1){
+          c.live.appendChild(el('circle', {cx:ex, cy:ey, r:3, fill:'#8a8f93', stroke:'#fcfcfb', 'stroke-width':1.5}));
+          var tr = el('text', {x: right ? ex + 8 : ex - 8, y: ey - 8, 'text-anchor': right ? 'start' : 'end',
+                               fill:'#8a8f93', 'font-size':10.5, 'font-family':'Archivo, sans-serif', 'font-weight':600});
+          tr.textContent = 'raw since ' + dateStr(v.through) + ': ' + (lc.rawSince >= 0 ? '+' : '−') + fmt(Math.abs(lc.rawSince));
+          c.live.appendChild(tr);
+        }
+      } else {
+        c.live.appendChild(el('circle', {cx:ex, cy:ey, r:3.5, fill:'#14181a', stroke:'#fcfcfb', 'stroke-width':1.5}));
+        var t = el('text', {x: right ? ex + 8 : ex - 8, y: ey - 8, 'text-anchor': right ? 'start' : 'end',
+                            fill:'#14181a', 'font-size':11.5, 'font-family':'Archivo, sans-serif', 'font-weight':600});
+        t.textContent = 'counted ' + fmtNet(lc.total);
+        c.live.appendChild(t);
+      }
     }
     /* readout under the caption */
-    var share = c.pAt[Math.min(lc.lastDoy, c.d1)];
-    var pace = (share && share >= 0.10 && lc.total > 0) ? Math.round(lc.total / share / 100) * 100 : null;
     var cap = document.getElementById(key === 'gan' ? 'liveGan' : 'liveCre');
-    cap.innerHTML = 'Live counter: <strong>' + fmtNet(lc.total) + '</strong> net upstream since ' +
-      dateStr(LIVE.season_start) + ' (raw, all species)' +
-      (lc.total < 0 ? ', more fish drifted down than came up so far' : '') +
-      ' · ' + dateStr(r.last_day) + ': ' + (lc.lastNet >= 0 ? '+' : '−') + fmt(Math.abs(lc.lastNet)) +
-      (pace !== null ? ' · on the median timing curve (' + Math.round(share*100) +
-        '% of the run by now) that pace points to ~' + fmt(pace) : '') +
-      (updStr ? ' · updated ' + updStr : '') + (r.stale ? ' (stale: the last fetch failed)' : '');
+    if (v){
+      var sp = v.species_up ? Object.keys(v.species_up).map(function(k){ return fmt(v.species_up[k]) + ' ' + k; }).join(' + ') : '';
+      cap.innerHTML = 'Technician-validated: <strong>' + fmtNet(lc.vTotal) + '</strong> fish net upstream ' +
+        dateStr(VALID.season_start || LIVE.season_start) + '–' + dateStr(v.through) +
+        (sp ? ' (' + sp + ' up, ' + fmt(v.season.down) + ' down' : ' (') +
+        (v.nonfish_events ? '; ' + fmt(v.nonfish_events) + ' non-fish counter events set aside)' : ')') +
+        ' · raw counter after ' + dateStr(v.through) + ': ' + (lc.rawSince >= 0 ? '+' : '−') + fmt(Math.abs(lc.rawSince)) +
+        ' net to ' + dateStr(r.last_day) + ' (all species, not yet reviewed — at the Credit this year the raw feed is mostly beaver and debris)' +
+        (updStr ? ' · updated ' + updStr : '') + (r.stale ? ' (stale: the last fetch failed)' : '');
+    } else {
+      var share = c.pAt[Math.min(lc.lastDoy, c.d1)];
+      var pace = (share && share >= 0.10 && lc.total > 0) ? Math.round(lc.total / share / 100) * 100 : null;
+      cap.innerHTML = 'Live counter: <strong>' + fmtNet(lc.total) + '</strong> net upstream since ' +
+        dateStr(LIVE.season_start) + ' (raw, all species)' +
+        (lc.total < 0 ? ', more fish drifted down than came up so far' : '') +
+        ' · ' + dateStr(r.last_day) + ': ' + (lc.lastNet >= 0 ? '+' : '−') + fmt(Math.abs(lc.lastNet)) +
+        (pace !== null ? ' · on the median timing curve (' + Math.round(share*100) +
+          '% of the run by now) that pace points to ~' + fmt(pace) : '') +
+        (updStr ? ' · updated ' + updStr : '') + (r.stale ? ' (stale: the last fetch failed)' : '');
+    }
     cap.classList.add('on');
     /* the riverwatcher summary table, as on the source page */
     var tbl = document.getElementById(key === 'gan' ? 'liveTblGan' : 'liveTblCre');
@@ -923,6 +982,11 @@ function renderLive(){
               '" target="_blank" rel="noopener">riverwatcherdaily.is</a> counter table (its whole-year row swapped for the fall run), raw and all species' +
               (updStr ? ' · as of ' + updStr : '') + '</caption>' +
               '<thead><tr><th></th><th class="r">Up</th><th class="r">Down</th><th class="r">Up − Down</th></tr></thead><tbody>';
+      if (v && v.season){
+        h += '<tr><td><strong>Technician-validated fish, ' + dateStr(VALID.season_start || LIVE.season_start) + '–' + dateStr(v.through) +
+             '</strong></td><td class="r num">' + fmt(v.season.up) + '</td><td class="r num">' + fmt(v.season.down) +
+             '</td><td class="r num">' + fmtNet(v.season.net) + '</td></tr>';
+      }
       r.summary.forEach(function(s){
         h += '<tr><td>' + escq(s.label) + '</td><td class="r num">' + fmt(s.up) + '</td><td class="r num">' +
              fmt(s.down) + '</td><td class="r num' + (s.net < 0 ? ' neg' : '') + '">' + fmtNet(s.net) + '</td></tr>';
@@ -939,10 +1003,14 @@ function renderLive(){
 }
 function loadLive(){
   if (!window.fetch) return;
-  fetch('data/counts.json?_=' + Date.now(), {cache:'no-store'})
-    .then(function(res){ if (!res.ok) throw new Error(res.status); return res.json(); })
-    .then(function(j){ if (j && (j.gan || j.cre)){ LIVE = j; liveCache = {}; renderLive(); } })
+  var asJson = function(res){ if (!res.ok) throw new Error(res.status); return res.json(); };
+  var raw = fetch('data/counts.json?_=' + Date.now(), {cache:'no-store'}).then(asJson)
+    .then(function(j){ if (j && (j.gan || j.cre)) LIVE = j; })
     .catch(function(){ /* no live file yet, or the page was opened from disk: charts stay as they are */ });
+  var val = fetch('data/validated.json?_=' + Date.now(), {cache:'no-store'}).then(asJson)
+    .then(function(j){ if (j && j.rivers) VALID = j; })
+    .catch(function(){ /* optional: no validated file means raw everywhere */ });
+  Promise.all([raw, val]).then(function(){ if (LIVE){ liveCache = {}; renderLive(); } });
 }
 
 buildChart('chartGan', 'gan');

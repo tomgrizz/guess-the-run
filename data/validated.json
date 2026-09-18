@@ -1,0 +1,49 @@
+{
+ "updated": "2026-09-18T17:28:05Z",
+ "season_start": "2026-08-01",
+ "source": "technician review of the counter clips (label-app exports), fish species only",
+ "rivers": {
+  "cre": {
+   "name": "Credit River",
+   "through": "2026-08-28",
+   "reviewed_events": 1009,
+   "nonfish_events": 980,
+   "season": {
+    "up": 31,
+    "down": 3,
+    "net": 28
+   },
+   "species_up": {
+    "Chinook": 30,
+    "Atlantic": 1
+   },
+   "daily": [
+    [
+     "2026-08-24",
+     7,
+     0
+    ],
+    [
+     "2026-08-25",
+     11,
+     3
+    ],
+    [
+     "2026-08-26",
+     6,
+     0
+    ],
+    [
+     "2026-08-27",
+     6,
+     0
+    ],
+    [
+     "2026-08-28",
+     1,
+     0
+    ]
+   ]
+  }
+ }
+}
