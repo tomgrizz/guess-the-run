@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-19T13:55:33Z",
+  "updated": "2026-09-20T00:59:42Z",
   "as_of": "2026-09-19",
   "season_start": "2026-08-01",
   "source": "https://www.riverwatcherdaily.is",
@@ -11,16 +11,16 @@
     "window": "Measured migration in [Ganaraska River, Ontario] from Jan 01, 2026 to Sep 19, 2026",
     "last_day": "2026-09-19",
     "summary": [
-      {"label": "Today", "up": 38, "down": 4, "net": 34},
-      {"label": "Yesterday", "up": 467, "down": 25, "net": 442},
-      {"label": "Last 7 days", "up": 1906, "down": 193, "net": 1713},
-      {"label": "Last 30 days", "up": 7086, "down": 689, "net": 6397},
-      {"label": "Fall run, since Aug 1", "up": 7218, "down": 722, "net": 6496}
+      {"label": "Today", "up": 0, "down": 0, "net": 0},
+      {"label": "Yesterday", "up": 324, "down": 13, "net": 311},
+      {"label": "Last 7 days", "up": 2050, "down": 191, "net": 1859},
+      {"label": "Last 30 days", "up": 7338, "down": 686, "net": 6652},
+      {"label": "Fall run, since Aug 1", "up": 7504, "down": 731, "net": 6773}
     ],
     "season": {
-      "up": 7218,
-      "down": 722,
-      "net": 6496,
+      "up": 7504,
+      "down": 731,
+      "net": 6773,
       "days": 38
     },
     "daily": [
@@ -61,7 +61,7 @@
       ["2026-09-16", 466, 88],
       ["2026-09-17", 346, 37],
       ["2026-09-18", 467, 25],
-      ["2026-09-19", 38, 4]
+      ["2026-09-19", 324, 13]
     ]
   },
   "cre": {
@@ -72,9 +72,9 @@
     "last_day": "2026-09-18",
     "summary": [
       {"label": "Today", "up": 0, "down": 0, "net": 0},
-      {"label": "Yesterday", "up": 50, "down": 14, "net": 36},
-      {"label": "Last 7 days", "up": 292, "down": 133, "net": 159},
-      {"label": "Last 30 days", "up": 761, "down": 577, "net": 184},
+      {"label": "Yesterday", "up": 0, "down": 0, "net": 0},
+      {"label": "Last 7 days", "up": 271, "down": 110, "net": 161},
+      {"label": "Last 30 days", "up": 721, "down": 514, "net": 207},
       {"label": "Fall run, since Aug 1", "up": 971, "down": 873, "net": 98}
     ],
     "season": {
