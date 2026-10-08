@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-07T17:25:57Z",
+  "updated": "2026-10-08T02:38:39Z",
   "as_of": "2026-10-07",
   "season_start": "2026-08-01",
   "source": "https://www.riverwatcherdaily.is",
@@ -11,10 +11,10 @@
     "window": "Measured migration in [Ganaraska River, Ontario] from Jan 01, 2026 to Oct 07, 2026",
     "last_day": "2026-10-07",
     "summary": [
-      {"label": "Today", "up": 40, "down": 28, "net": 12},
-      {"label": "Yesterday", "up": 155, "down": 26, "net": 129},
-      {"label": "Last 7 days", "up": 3338, "down": 551, "net": 2787},
-      {"label": "Last 30 days", "up": 16074, "down": 1900, "net": 14174},
+      {"label": "Today", "up": 0, "down": 0, "net": 0},
+      {"label": "Yesterday", "up": 40, "down": 28, "net": 12},
+      {"label": "Last 7 days", "up": 2315, "down": 440, "net": 1875},
+      {"label": "Last 30 days", "up": 15551, "down": 1869, "net": 13682},
       {"label": "Fall run, since Aug 1", "up": 19037, "down": 2328, "net": 16709}
     ],
     "season": {
@@ -89,16 +89,16 @@
     "window": "Measured migration in [Credit River, Ontario] from Jan 01, 2026 to Oct 07, 2026",
     "last_day": "2026-10-07",
     "summary": [
-      {"label": "Today", "up": 164, "down": 19, "net": 145},
-      {"label": "Yesterday", "up": 431, "down": 10, "net": 421},
-      {"label": "Last 7 days", "up": 2224, "down": 190, "net": 2034},
-      {"label": "Last 30 days", "up": 2843, "down": 423, "net": 2420},
-      {"label": "Fall run, since Aug 1", "up": 3510, "down": 1152, "net": 2358}
+      {"label": "Today", "up": 0, "down": 0, "net": 0},
+      {"label": "Yesterday", "up": 215, "down": 23, "net": 192},
+      {"label": "Last 7 days", "up": 2194, "down": 186, "net": 2008},
+      {"label": "Last 30 days", "up": 2891, "down": 427, "net": 2464},
+      {"label": "Fall run, since Aug 1", "up": 3561, "down": 1156, "net": 2405}
     ],
     "season": {
-      "up": 3510,
-      "down": 1152,
-      "net": 2358,
+      "up": 3561,
+      "down": 1156,
+      "net": 2405,
       "days": 62
     },
     "daily": [
@@ -163,7 +163,7 @@
       ["2026-10-04", 425, 20],
       ["2026-10-05", 545, 40],
       ["2026-10-06", 431, 10],
-      ["2026-10-07", 164, 19]
+      ["2026-10-07", 215, 23]
     ]
   }
 }
