@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-29T02:20:34Z",
-  "as_of": "2026-10-28",
+  "updated": "2026-10-29T16:56:06Z",
+  "as_of": "2026-10-29",
   "season_start": "2026-08-01",
   "source": "https://www.riverwatcherdaily.is",
   "note": "Raw RiverWatcher counter numbers: every species, net = up - down, not technician validated. Context only; the pool is scored on the official Chinook totals.",
@@ -8,20 +8,20 @@
     "counter_id": 133,
     "name": "Ganaraska River, Ontario",
     "url": "https://www.riverwatcherdaily.is/?I=133",
-    "window": "Measured migration in [Ganaraska River, Ontario] from Jan 01, 2026 to Oct 28, 2026",
-    "last_day": "2026-10-28",
+    "window": "Measured migration in [Ganaraska River, Ontario] from Jan 01, 2026 to Oct 29, 2026",
+    "last_day": "2026-10-29",
     "summary": [
-      {"label": "Today", "up": 0, "down": 0, "net": 0},
+      {"label": "Today", "up": 2, "down": 1, "net": 1},
       {"label": "Yesterday", "up": 11, "down": 5, "net": 6},
-      {"label": "Last 7 days", "up": 82, "down": 42, "net": 40},
-      {"label": "Last 30 days", "up": 6996, "down": 1420, "net": 5576},
-      {"label": "Fall run, since Aug 1", "up": 21460, "down": 2869, "net": 18591}
+      {"label": "Last 7 days", "up": 84, "down": 43, "net": 41},
+      {"label": "Last 30 days", "up": 6998, "down": 1421, "net": 5577},
+      {"label": "Fall run, since Aug 1", "up": 21462, "down": 2870, "net": 18592}
     ],
     "season": {
-      "up": 21460,
-      "down": 2869,
-      "net": 18591,
-      "days": 77
+      "up": 21462,
+      "down": 2870,
+      "net": 18592,
+      "days": 78
     },
     "daily": [
       ["2026-08-05", 25, 6],
@@ -100,27 +100,28 @@
       ["2026-10-25", 1, 4],
       ["2026-10-26", 7, 4],
       ["2026-10-27", 37, 14],
-      ["2026-10-28", 11, 5]
+      ["2026-10-28", 11, 5],
+      ["2026-10-29", 2, 1]
     ]
   },
   "cre": {
     "counter_id": 143,
     "name": "Credit River, Ontario",
     "url": "https://www.riverwatcherdaily.is/?I=143",
-    "window": "Measured migration in [Credit River, Ontario] from Jan 01, 2026 to Oct 28, 2026",
-    "last_day": "2026-10-28",
+    "window": "Measured migration in [Credit River, Ontario] from Jan 01, 2026 to Oct 29, 2026",
+    "last_day": "2026-10-29",
     "summary": [
-      {"label": "Today", "up": 0, "down": 0, "net": 0},
-      {"label": "Yesterday", "up": 113, "down": 71, "net": 42},
-      {"label": "Last 7 days", "up": 625, "down": 129, "net": 496},
-      {"label": "Last 30 days", "up": 7804, "down": 946, "net": 6858},
-      {"label": "Fall run, since Aug 1", "up": 9014, "down": 1907, "net": 7107}
+      {"label": "Today", "up": 17, "down": 35, "net": -18},
+      {"label": "Yesterday", "up": 114, "down": 81, "net": 33},
+      {"label": "Last 7 days", "up": 643, "down": 174, "net": 469},
+      {"label": "Last 30 days", "up": 7822, "down": 991, "net": 6831},
+      {"label": "Fall run, since Aug 1", "up": 9032, "down": 1952, "net": 7080}
     ],
     "season": {
-      "up": 9014,
-      "down": 1907,
-      "net": 7107,
-      "days": 83
+      "up": 9032,
+      "down": 1952,
+      "net": 7080,
+      "days": 84
     },
     "daily": [
       ["2026-08-01", 23, 22],
@@ -205,7 +206,8 @@
       ["2026-10-25", 143, 5],
       ["2026-10-26", 80, 19],
       ["2026-10-27", 80, 12],
-      ["2026-10-28", 113, 71]
+      ["2026-10-28", 114, 81],
+      ["2026-10-29", 17, 35]
     ]
   }
 }
