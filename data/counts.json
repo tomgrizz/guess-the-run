@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-31T15:44:37Z",
+  "updated": "2026-11-01T02:06:28Z",
   "as_of": "2026-10-31",
   "season_start": "2026-08-01",
   "source": "https://www.riverwatcherdaily.is",
@@ -11,16 +11,16 @@
     "window": "Measured migration in [Ganaraska River, Ontario] from Jan 01, 2026 to Oct 31, 2026",
     "last_day": "2026-10-31",
     "summary": [
-      {"label": "Today", "up": 2, "down": 3, "net": -1},
-      {"label": "Yesterday", "up": 59, "down": 21, "net": 38},
-      {"label": "Last 7 days", "up": 135, "down": 57, "net": 78},
-      {"label": "Last 30 days", "up": 4814, "down": 1009, "net": 3805},
-      {"label": "Fall run, since Aug 1", "up": 21536, "down": 2897, "net": 18639}
+      {"label": "Today", "up": 0, "down": 0, "net": 0},
+      {"label": "Yesterday", "up": 35, "down": 16, "net": 19},
+      {"label": "Last 7 days", "up": 165, "down": 68, "net": 97},
+      {"label": "Last 30 days", "up": 4243, "down": 896, "net": 3347},
+      {"label": "Fall run, since Aug 1", "up": 21569, "down": 2910, "net": 18659}
     ],
     "season": {
-      "up": 21536,
-      "down": 2897,
-      "net": 18639,
+      "up": 21569,
+      "down": 2910,
+      "net": 18659,
       "days": 80
     },
     "daily": [
@@ -103,7 +103,7 @@
       ["2026-10-28", 11, 5],
       ["2026-10-29", 15, 4],
       ["2026-10-30", 59, 21],
-      ["2026-10-31", 2, 3]
+      ["2026-10-31", 35, 16]
     ]
   },
   "cre": {
@@ -114,9 +114,9 @@
     "last_day": "2026-10-30",
     "summary": [
       {"label": "Today", "up": 0, "down": 0, "net": 0},
-      {"label": "Yesterday", "up": 27, "down": 3, "net": 24},
-      {"label": "Last 7 days", "up": 606, "down": 178, "net": 428},
-      {"label": "Last 30 days", "up": 7734, "down": 1002, "net": 6732},
+      {"label": "Yesterday", "up": 0, "down": 0, "net": 0},
+      {"label": "Last 7 days", "up": 503, "down": 172, "net": 331},
+      {"label": "Last 30 days", "up": 7623, "down": 991, "net": 6632},
       {"label": "Fall run, since Aug 1", "up": 9101, "down": 1972, "net": 7129}
     ],
     "season": {
