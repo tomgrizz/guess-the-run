@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T17:30:17Z",
+  "updated": "2026-11-07T02:42:04Z",
   "as_of": "2026-11-06",
   "season_start": "2026-08-01",
   "source": "https://www.riverwatcherdaily.is",
@@ -12,9 +12,9 @@
     "last_day": "2026-11-05",
     "summary": [
       {"label": "Today", "up": 0, "down": 0, "net": 0},
-      {"label": "Yesterday", "up": 56, "down": 26, "net": 30},
-      {"label": "Last 7 days", "up": 257, "down": 117, "net": 140},
-      {"label": "Last 30 days", "up": 2735, "down": 690, "net": 2045},
+      {"label": "Yesterday", "up": 0, "down": 0, "net": 0},
+      {"label": "Last 7 days", "up": 198, "down": 96, "net": 102},
+      {"label": "Last 30 days", "up": 2680, "down": 661, "net": 2019},
       {"label": "Fall run, since Aug 1", "up": 21732, "down": 2990, "net": 18742}
     ],
     "season": {
@@ -118,16 +118,16 @@
     "window": "Measured migration in [Credit River, Ontario] from Jan 01, 2026 to Nov 06, 2026",
     "last_day": "2026-11-06",
     "summary": [
-      {"label": "Today", "up": 78, "down": 11, "net": 67},
-      {"label": "Yesterday", "up": 86, "down": 20, "net": 66},
-      {"label": "Last 7 days", "up": 354, "down": 71, "net": 283},
-      {"label": "Last 30 days", "up": 6082, "down": 907, "net": 5175},
-      {"label": "Fall run, since Aug 1", "up": 9428, "down": 2040, "net": 7388}
+      {"label": "Today", "up": 0, "down": 0, "net": 0},
+      {"label": "Yesterday", "up": 138, "down": 18, "net": 120},
+      {"label": "Last 7 days", "up": 387, "down": 75, "net": 312},
+      {"label": "Last 30 days", "up": 5927, "down": 891, "net": 5036},
+      {"label": "Fall run, since Aug 1", "up": 9488, "down": 2047, "net": 7441}
     ],
     "season": {
-      "up": 9428,
-      "down": 2040,
-      "net": 7388,
+      "up": 9488,
+      "down": 2047,
+      "net": 7441,
       "days": 91
     },
     "daily": [
@@ -221,7 +221,7 @@
       ["2026-11-03", 49, 7],
       ["2026-11-04", 76, 19],
       ["2026-11-05", 86, 20],
-      ["2026-11-06", 78, 11]
+      ["2026-11-06", 138, 18]
     ]
   }
 }
