@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T16:36:41Z",
+  "updated": "2026-11-15T02:32:24Z",
   "as_of": "2026-11-14",
   "season_start": "2026-08-01",
   "source": "https://www.riverwatcherdaily.is",
@@ -9,19 +9,19 @@
     "name": "Ganaraska River, Ontario",
     "url": "https://www.riverwatcherdaily.is/?I=133",
     "window": "Measured migration in [Ganaraska River, Ontario] from Jan 01, 2026 to Nov 14, 2026",
-    "last_day": "2026-11-13",
+    "last_day": "2026-11-14",
     "summary": [
       {"label": "Today", "up": 0, "down": 0, "net": 0},
-      {"label": "Yesterday", "up": 0, "down": 4, "net": -4},
-      {"label": "Last 7 days", "up": 122, "down": 109, "net": 13},
-      {"label": "Last 30 days", "up": 964, "down": 391, "net": 573},
-      {"label": "Fall run, since Aug 1", "up": 21862, "down": 3101, "net": 18761}
+      {"label": "Yesterday", "up": 10, "down": 9, "net": 1},
+      {"label": "Last 7 days", "up": 132, "down": 118, "net": 14},
+      {"label": "Last 30 days", "up": 735, "down": 369, "net": 366},
+      {"label": "Fall run, since Aug 1", "up": 21872, "down": 3110, "net": 18762}
     ],
     "season": {
-      "up": 21862,
-      "down": 3101,
-      "net": 18761,
-      "days": 90
+      "up": 21872,
+      "down": 3110,
+      "net": 18762,
+      "days": 91
     },
     "daily": [
       ["2026-08-05", 25, 6],
@@ -113,7 +113,8 @@
       ["2026-11-10", 46, 48],
       ["2026-11-11", 49, 41],
       ["2026-11-12", 10, 7],
-      ["2026-11-13", 0, 4]
+      ["2026-11-13", 0, 4],
+      ["2026-11-14", 10, 9]
     ]
   },
   "cre": {
@@ -123,16 +124,16 @@
     "window": "Measured migration in [Credit River, Ontario] from Jan 01, 2026 to Nov 14, 2026",
     "last_day": "2026-11-14",
     "summary": [
-      {"label": "Today", "up": 0, "down": 1, "net": -1},
-      {"label": "Yesterday", "up": 2, "down": 7, "net": -5},
-      {"label": "Last 7 days", "up": 131, "down": 110, "net": 21},
-      {"label": "Last 30 days", "up": 2645, "down": 537, "net": 2108},
-      {"label": "Fall run, since Aug 1", "up": 9625, "down": 2157, "net": 7468}
+      {"label": "Today", "up": 0, "down": 0, "net": 0},
+      {"label": "Yesterday", "up": 0, "down": 8, "net": -8},
+      {"label": "Last 7 days", "up": 89, "down": 109, "net": -20},
+      {"label": "Last 30 days", "up": 2308, "down": 511, "net": 1797},
+      {"label": "Fall run, since Aug 1", "up": 9625, "down": 2164, "net": 7461}
     ],
     "season": {
       "up": 9625,
-      "down": 2157,
-      "net": 7468,
+      "down": 2164,
+      "net": 7461,
       "days": 99
     },
     "daily": [
@@ -234,7 +235,7 @@
       ["2026-11-11", 14, 9],
       ["2026-11-12", 16, 19],
       ["2026-11-13", 2, 7],
-      ["2026-11-14", 0, 1]
+      ["2026-11-14", 0, 8]
     ]
   }
 }
