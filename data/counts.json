@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-20T18:37:16Z",
+  "updated": "2026-11-21T03:53:48Z",
   "as_of": "2026-11-20",
   "season_start": "2026-08-01",
   "source": "https://www.riverwatcherdaily.is",
@@ -12,9 +12,9 @@
     "last_day": "2026-11-19",
     "summary": [
       {"label": "Today", "up": 0, "down": 0, "net": 0},
-      {"label": "Yesterday", "up": 0, "down": 1, "net": -1},
-      {"label": "Last 7 days", "up": 23, "down": 20, "net": 3},
-      {"label": "Last 30 days", "up": 513, "down": 290, "net": 223},
+      {"label": "Yesterday", "up": 0, "down": 0, "net": 0},
+      {"label": "Last 7 days", "up": 23, "down": 16, "net": 7},
+      {"label": "Last 30 days", "up": 507, "down": 290, "net": 217},
       {"label": "Fall run, since Aug 1", "up": 21885, "down": 3117, "net": 18768}
     ],
     "season": {
@@ -127,16 +127,16 @@
     "window": "Measured migration in [Credit River, Ontario] from Jan 01, 2026 to Nov 20, 2026",
     "last_day": "2026-11-20",
     "summary": [
-      {"label": "Today", "up": 3, "down": 3, "net": 0},
-      {"label": "Yesterday", "up": 4, "down": 5, "net": -1},
-      {"label": "Last 7 days", "up": 19, "down": 47, "net": -28},
-      {"label": "Last 30 days", "up": 1342, "down": 423, "net": 919},
-      {"label": "Fall run, since Aug 1", "up": 9642, "down": 2196, "net": 7446}
+      {"label": "Today", "up": 0, "down": 0, "net": 0},
+      {"label": "Yesterday", "up": 13, "down": 8, "net": 5},
+      {"label": "Last 7 days", "up": 27, "down": 45, "net": -18},
+      {"label": "Last 30 days", "up": 1263, "down": 423, "net": 840},
+      {"label": "Fall run, since Aug 1", "up": 9652, "down": 2201, "net": 7451}
     ],
     "season": {
-      "up": 9642,
-      "down": 2196,
-      "net": 7446,
+      "up": 9652,
+      "down": 2201,
+      "net": 7451,
       "days": 105
     },
     "daily": [
@@ -244,7 +244,7 @@
       ["2026-11-17", 3, 3],
       ["2026-11-18", 5, 1],
       ["2026-11-19", 4, 5],
-      ["2026-11-20", 3, 3]
+      ["2026-11-20", 13, 8]
     ]
   }
 }
