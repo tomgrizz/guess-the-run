@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-21T03:53:48Z",
-  "as_of": "2026-11-20",
+  "updated": "2026-11-21T17:34:34Z",
+  "as_of": "2026-11-21",
   "season_start": "2026-08-01",
   "source": "https://www.riverwatcherdaily.is",
   "note": "Raw RiverWatcher counter numbers: every species, net = up - down, not technician validated. Context only; the pool is scored on the official Chinook totals.",
@@ -8,7 +8,7 @@
     "counter_id": 133,
     "name": "Ganaraska River, Ontario",
     "url": "https://www.riverwatcherdaily.is/?I=133",
-    "window": "Measured migration in [Ganaraska River, Ontario] from Jan 01, 2026 to Nov 20, 2026",
+    "window": "Measured migration in [Ganaraska River, Ontario] from Jan 01, 2026 to Nov 21, 2026",
     "last_day": "2026-11-19",
     "summary": [
       {"label": "Today", "up": 0, "down": 0, "net": 0},
@@ -124,7 +124,7 @@
     "counter_id": 143,
     "name": "Credit River, Ontario",
     "url": "https://www.riverwatcherdaily.is/?I=143",
-    "window": "Measured migration in [Credit River, Ontario] from Jan 01, 2026 to Nov 20, 2026",
+    "window": "Measured migration in [Credit River, Ontario] from Jan 01, 2026 to Nov 21, 2026",
     "last_day": "2026-11-20",
     "summary": [
       {"label": "Today", "up": 0, "down": 0, "net": 0},
