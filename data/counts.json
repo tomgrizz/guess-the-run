@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-22T02:59:29Z",
-  "as_of": "2026-11-21",
+  "updated": "2026-11-22T17:50:49Z",
+  "as_of": "2026-11-22",
   "season_start": "2026-08-01",
   "source": "https://www.riverwatcherdaily.is",
   "note": "Raw RiverWatcher counter numbers: every species, net = up - down, not technician validated. Context only; the pool is scored on the official Chinook totals.",
@@ -8,7 +8,7 @@
     "counter_id": 133,
     "name": "Ganaraska River, Ontario",
     "url": "https://www.riverwatcherdaily.is/?I=133",
-    "window": "Measured migration in [Ganaraska River, Ontario] from Jan 01, 2026 to Nov 21, 2026",
+    "window": "Measured migration in [Ganaraska River, Ontario] from Jan 01, 2026 to Nov 22, 2026",
     "last_day": "2026-11-21",
     "summary": [
       {"label": "Today", "up": 0, "down": 0, "net": 0},
@@ -125,20 +125,20 @@
     "counter_id": 143,
     "name": "Credit River, Ontario",
     "url": "https://www.riverwatcherdaily.is/?I=143",
-    "window": "Measured migration in [Credit River, Ontario] from Jan 01, 2026 to Nov 21, 2026",
-    "last_day": "2026-11-21",
+    "window": "Measured migration in [Credit River, Ontario] from Jan 01, 2026 to Nov 22, 2026",
+    "last_day": "2026-11-22",
     "summary": [
-      {"label": "Today", "up": 0, "down": 0, "net": 0},
+      {"label": "Today", "up": 0, "down": 1, "net": -1},
       {"label": "Yesterday", "up": 7, "down": 5, "net": 2},
-      {"label": "Last 7 days", "up": 34, "down": 41, "net": -7},
-      {"label": "Last 30 days", "up": 1263, "down": 425, "net": 838},
-      {"label": "Fall run, since Aug 1", "up": 9659, "down": 2206, "net": 7453}
+      {"label": "Last 7 days", "up": 34, "down": 42, "net": -8},
+      {"label": "Last 30 days", "up": 1263, "down": 426, "net": 837},
+      {"label": "Fall run, since Aug 1", "up": 9659, "down": 2207, "net": 7452}
     ],
     "season": {
       "up": 9659,
-      "down": 2206,
-      "net": 7453,
-      "days": 106
+      "down": 2207,
+      "net": 7452,
+      "days": 107
     },
     "daily": [
       ["2026-08-01", 23, 22],
@@ -246,7 +246,8 @@
       ["2026-11-18", 5, 1],
       ["2026-11-19", 4, 5],
       ["2026-11-20", 13, 8],
-      ["2026-11-21", 7, 5]
+      ["2026-11-21", 7, 5],
+      ["2026-11-22", 0, 1]
     ]
   }
 }
