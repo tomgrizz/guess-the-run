@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25T05:22:27Z",
+  "updated": "2026-11-25T19:56:49Z",
   "as_of": "2026-11-25",
   "season_start": "2026-08-01",
   "source": "https://www.riverwatcherdaily.is",
@@ -128,19 +128,19 @@
     "name": "Credit River, Ontario",
     "url": "https://www.riverwatcherdaily.is/?I=143",
     "window": "Measured migration in [Credit River, Ontario] from Jan 01, 2026 to Nov 25, 2026",
-    "last_day": "2026-11-24",
+    "last_day": "2026-11-25",
     "summary": [
-      {"label": "Today", "up": 0, "down": 0, "net": 0},
+      {"label": "Today", "up": 0, "down": 1, "net": -1},
       {"label": "Yesterday", "up": 1, "down": 3, "net": -2},
-      {"label": "Last 7 days", "up": 31, "down": 52, "net": -21},
-      {"label": "Last 30 days", "up": 920, "down": 434, "net": 486},
-      {"label": "Fall run, since Aug 1", "up": 9661, "down": 2239, "net": 7422}
+      {"label": "Last 7 days", "up": 31, "down": 53, "net": -22},
+      {"label": "Last 30 days", "up": 920, "down": 435, "net": 485},
+      {"label": "Fall run, since Aug 1", "up": 9661, "down": 2240, "net": 7421}
     ],
     "season": {
       "up": 9661,
-      "down": 2239,
-      "net": 7422,
-      "days": 109
+      "down": 2240,
+      "net": 7421,
+      "days": 110
     },
     "daily": [
       ["2026-08-01", 23, 22],
@@ -251,7 +251,8 @@
       ["2026-11-21", 7, 5],
       ["2026-11-22", 0, 4],
       ["2026-11-23", 1, 26],
-      ["2026-11-24", 1, 3]
+      ["2026-11-24", 1, 3],
+      ["2026-11-25", 0, 1]
     ]
   }
 }
