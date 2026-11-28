@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27T19:28:54Z",
+  "updated": "2026-11-28T04:41:14Z",
   "as_of": "2026-11-27",
   "season_start": "2026-08-01",
   "source": "https://www.riverwatcherdaily.is",
@@ -11,10 +11,10 @@
     "window": "Measured migration in [Ganaraska River, Ontario] from Jan 01, 2026 to Nov 27, 2026",
     "last_day": "2026-11-27",
     "summary": [
-      {"label": "Today", "up": 3, "down": 1, "net": 2},
-      {"label": "Yesterday", "up": 1, "down": 2, "net": -1},
+      {"label": "Today", "up": 0, "down": 0, "net": 0},
+      {"label": "Yesterday", "up": 3, "down": 1, "net": 2},
       {"label": "Last 7 days", "up": 12, "down": 6, "net": 6},
-      {"label": "Last 30 days", "up": 448, "down": 259, "net": 189},
+      {"label": "Last 30 days", "up": 437, "down": 254, "net": 183},
       {"label": "Fall run, since Aug 1", "up": 21897, "down": 3123, "net": 18774}
     ],
     "season": {
@@ -132,16 +132,16 @@
     "window": "Measured migration in [Credit River, Ontario] from Jan 01, 2026 to Nov 27, 2026",
     "last_day": "2026-11-27",
     "summary": [
-      {"label": "Today", "up": 11, "down": 25, "net": -14},
-      {"label": "Yesterday", "up": 5, "down": 15, "net": -10},
-      {"label": "Last 7 days", "up": 38, "down": 88, "net": -50},
-      {"label": "Last 30 days", "up": 776, "down": 445, "net": 331},
-      {"label": "Fall run, since Aug 1", "up": 9677, "down": 2281, "net": 7396}
+      {"label": "Today", "up": 0, "down": 0, "net": 0},
+      {"label": "Yesterday", "up": 15, "down": 28, "net": -13},
+      {"label": "Last 7 days", "up": 29, "down": 83, "net": -54},
+      {"label": "Last 30 days", "up": 666, "down": 367, "net": 299},
+      {"label": "Fall run, since Aug 1", "up": 9681, "down": 2284, "net": 7397}
     ],
     "season": {
-      "up": 9677,
-      "down": 2281,
-      "net": 7396,
+      "up": 9681,
+      "down": 2284,
+      "net": 7397,
       "days": 112
     },
     "daily": [
@@ -256,7 +256,7 @@
       ["2026-11-24", 1, 3],
       ["2026-11-25", 0, 2],
       ["2026-11-26", 5, 15],
-      ["2026-11-27", 11, 25]
+      ["2026-11-27", 15, 28]
     ]
   }
 }
